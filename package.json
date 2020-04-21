@@ -8,8 +8,10 @@
   "scripts": {
     "build": "webpack --mode production",
     "format": "prettier --write \"**/*.{js,json}\"",
+    "jest": "jest",
     "lint": "eslint src/",
-    "start": "webpack-dev-server --open --hot --mode development"
+    "start": "webpack-dev-server --open --hot --mode development",
+    "test": "concurrently 'npm run lint' 'npm run jest'"
   },
   "dependencies": {
     "react": "^16.13.1",
@@ -19,6 +21,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
+    "@babel/polyfill": "^7.8.7",
     "@babel/preset-env": "^7.9.5",
     "@babel/preset-react": "^7.9.4",
     "@testing-library/react": "^10.0.3",
@@ -43,6 +46,11 @@
     "html-webpack-plugin": "^4.2.0",
     "husky": "^4.2.5",
     "jest": "^25.4.0",
+    "jest-diff": "^25.4.0",
+    "jest-dom": "^4.0.0",
+    "jest-extended": "^0.11.5",
+    "jest-html-reporter": "^3.1.0",
+    "jest-junit-reporter": "^1.1.0",
     "lint-staged": "^10.1.6",
     "prettier": "^2.0.4",
     "webpack": "^4.42.1",
@@ -58,6 +66,17 @@
     "*.{js,json}": [
       "prettier --write",
       "git add"
+    ]
+  },
+  "pra": {
+    "reports": [
+      {
+        "type": "istanbul",
+        "displayName": "jest coverage",
+        "analyze": "coverage/coverage-summary.json",
+        "archiveTarget": "coverage",
+        "archiveIndex": "coverage/lcov-report/index.html"
+      }
     ]
   }
 }
