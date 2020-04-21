@@ -1,6 +1,6 @@
 const routes = {
     home: '/',
-    plan: 'plan/:planId',
+    plan: '/plan/:planId',
 };
 
 export default routes;
