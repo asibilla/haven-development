@@ -40,5 +40,5 @@ jobs:
           at: ~/haven-development
       - aws-s3/sync:
           from: bucket
-          to: 's3://haven-development/website'
+          to: 's3://haven-development'
           overwrite: true
