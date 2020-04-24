@@ -7,12 +7,12 @@ workflows:
   build-deploy:
     jobs:
       - build
-      - deploy:
-        requires:
-          - build
-        filters:
-          branches:
-            only: master
+      # - deploy:
+      #   requires:
+      #     - build
+      #   filters:
+      #     branches:
+      #       only: master
 
 jobs:
   build:
@@ -30,14 +30,14 @@ jobs:
           - node_modules
       - store_test_results: 
         path: ~/haven-development/coverage/junit.xml
-  deploy:
-    docker:
-      - image: amazon/aws-cli:latest
-    steps:
-      - checkout
-      - aws-s3/sync:
-        from: bucket
-        to: 's3://haven-development/website'
-        arguments: |
-          --cache-control "max-age=86400"
-        overwrite: true
+  # deploy:
+  #   docker:
+  #     - image: amazon/aws-cli:latest
+  #   steps:
+  #     - checkout
+  #     - aws-s3/sync:
+  #       from: bucket
+  #       to: 's3://haven-development/website'
+  #       arguments: |
+  #         --cache-control "max-age=86400"
+  #       overwrite: true
