@@ -28,6 +28,7 @@ jobs:
           root: ~/haven-development
           paths: 
             - node_modules
+            - dist
       - store_test_results: 
           path: ~/haven-development/coverage/junit.xml
   deploy:
