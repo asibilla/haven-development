@@ -36,6 +36,7 @@ jobs:
     steps:
       - checkout
       - aws-s3/sync:
+          aws-region: us-west-1
           from: bucket
           to: 's3://haven-development/website'
           overwrite: true
