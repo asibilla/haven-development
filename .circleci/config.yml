@@ -1,7 +1,7 @@
-version: 2.1 # use CircleCI 2.1
+version: 2.1
 
 orbs:
-   aws-s3: circleci/aws-s3@x.y.z
+  aws-s3: circleci/aws-s3@x.y.z
 workflows:
   version: 2
   build-deploy:
@@ -9,12 +9,13 @@ workflows:
       - build
       - deploy:
         requires:
-          -build
-        filters:
-          branches:
-            only: master
+          - build
+          filters:
+            branches:
+              only: master
+
 jobs:
-  build: 
+  build:
     working_directory: ~/haven-development
     docker:
       - image: circleci/node:10.16.3
@@ -24,11 +25,11 @@ jobs:
       - run: yarn test
       - run: yarn build
       - persist_to_workspace: 
-          root: ~/haven-development
-          paths: 
-            - node_modules
+        root: ~/haven-development
+        paths: 
+          - node_modules
       - store_test_results: 
-          path: ~/haven-development/coverage/junit.xml
+        path: ~/haven-development/coverage/junit.xml
   deploy:
     docker:
       - image: amazon/aws-cli:latest
@@ -37,6 +38,6 @@ jobs:
       - aws-s3/sync:
         from: bucket
         to: 's3://haven-development/website'
+        arguments: |
+          --cache-control "max-age=86400"
         overwrite: true
-    
- 
