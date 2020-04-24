@@ -32,7 +32,7 @@ jobs:
           path: ~/haven-development/coverage/junit.xml
   deploy:
     docker:
-      - image: amazon/aws-cli:latest
+      - image: 'cimg/python:3.6'
     steps:
       - checkout
       - aws-s3/sync:
