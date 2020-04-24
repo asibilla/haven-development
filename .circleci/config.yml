@@ -36,6 +36,8 @@ jobs:
       - image: 'cimg/python:3.6'
     steps:
       - checkout
+      - attach_workspace:
+          at: ~/haven-development
       - aws-s3/sync:
           from: bucket
           to: 's3://haven-development/website'
