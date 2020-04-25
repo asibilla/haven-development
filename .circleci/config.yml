@@ -40,6 +40,7 @@ jobs:
           at: ~/haven-development
       - aws-cli/setup:
           profile-name: default
-      - run:
-          name: Upload file to s3
-          command: aws s3 sync ./dist/ s3://haven-development/website
+      - run: ls ~/haven-development
+      # - run:
+      #     name: Upload file to s3
+      #     command: aws s3 sync ./dist/ s3://haven-development/website
