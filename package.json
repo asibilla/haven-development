@@ -10,7 +10,7 @@
     "format": "prettier --write \"**/*.{js,json}\"",
     "jest": "jest",
     "lint": "eslint src/",
-    "start": "webpack-dev-server --open --hot --mode development",
+    "start": "webpack-dev-server --open --inline",
     "test": "concurrently 'npm run lint' 'npm run jest'"
   },
   "dependencies": {

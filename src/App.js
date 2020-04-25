@@ -1,14 +1,20 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
-import ViewWrapper from './view/components/ViewWrapper';
+import { SiteHeader, ViewWrapper } from './view/components';
+import { styles } from './constants/';
+
+const { globalStyles } = styles;
+
 
 const App = () => {
   return (
-    <BrowserRouter>
-      Hello World!
-      <ViewWrapper />
-    </BrowserRouter>
+    <div className={globalStyles}>
+      <BrowserRouter>
+        <SiteHeader />
+        <ViewWrapper />
+      </BrowserRouter>
+    </div>
   );
 };
 
