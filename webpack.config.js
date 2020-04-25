@@ -33,9 +33,7 @@ module.exports = {
     ],
   },
   plugins: [
-    new CopyWebpackPlugin([
-      { from:'src/images', to:'images' } 
-    ]), 
+    new CopyWebpackPlugin([{ from: 'src/images', to: 'images' }]),
     new HtmlWebPackPlugin({
       template: './src/index.html',
       filename: './index.html',

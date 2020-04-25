@@ -1,4 +1,6 @@
 coverage/
 dist/
 node_modules
+test-report.html
+test-report.xml
 yarn-error.log

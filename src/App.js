@@ -2,10 +2,9 @@ import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
 import { SiteHeader, ViewWrapper } from './view/components';
-import { styles } from './constants/';
+import { styles } from './constants';
 
 const { globalStyles } = styles;
-
 
 const App = () => {
   return (

@@ -1,15 +1,13 @@
 import React from 'react';
 
-
 import { styles } from '../../constants';
 
 const { heroImage } = styles;
 
-
 const Home = () => {
   return (
-    <div>
-      <img className={heroImage} src="images/hp-hero.jpeg" />
+    <div data-testid="hp-wrapper">
+      <img className={heroImage} src="images/hp-hero.jpeg" alt="Haven Development HP Hero" />
     </div>
   );
 };
