@@ -1,3 +1,4 @@
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
@@ -6,10 +7,11 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'main.js',
-    publicPath: '/',
   },
   devServer: {
+    contentBase: path.resolve(__dirname, 'src'),
     historyApiFallback: true,
+    watchContentBase: true,
   },
   module: {
     rules: [
@@ -31,6 +33,7 @@ module.exports = {
     ],
   },
   plugins: [
+    new CopyWebpackPlugin([{ from: 'src/images', to: 'images' }]),
     new HtmlWebPackPlugin({
       template: './src/index.html',
       filename: './index.html',

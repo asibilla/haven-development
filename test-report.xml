@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite id="0" name="/home/andy/sites/haven-development/src/view/routes/tests/Home.test.js" errors="0" package="/home/andy/sites/haven-development/src/view/routes/tests/Home.test.js" hostname="localhost" tests="1" failures="0" time="1.011" timestamp="2020-04-21T15:46:17">
+  <testsuite id="0" name="/home/andy/sites/haven-development/src/view/routes/tests/Home.test.js" errors="0" package="/home/andy/sites/haven-development/src/view/routes/tests/Home.test.js" hostname="localhost" tests="1" failures="0" time="1.376" timestamp="2020-04-25T20:48:27">
     <properties>
     </properties>
     <testcase classname="&lt;Home /&gt;" name="renders" time="0">
