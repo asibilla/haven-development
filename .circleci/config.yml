@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  aws-s3: circleci/aws-s3@1.0.15
+  aws-cli: circleci/aws-cli@0.1.18
 workflows:
   version: 2
   build-deploy:
@@ -38,7 +38,8 @@ jobs:
       - checkout
       - attach_workspace:
           at: ~/haven-development
-      - aws-s3/sync:
-          from: bucket
-          to: 's3://haven-development'
-          overwrite: true
+      - aws-cli/setup:
+          profile-name: default
+      - run:
+          name: Upload file to s3
+          command: aws s3 sync ./dist/ s3://haven-development/website
