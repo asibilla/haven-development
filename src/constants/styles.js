@@ -2,7 +2,7 @@ import { css, cx } from 'react-emotion';
 
 import { styleHelpers } from '../helpers';
 
-const { flexGrow, fontSize } = styleHelpers;
+const { flexGrow, fontSize, padding } = styleHelpers;
 
 const xxLargeBreakpoint = 1480;
 const xLargeBreakpoint = 1200;
@@ -14,13 +14,13 @@ const xLarge = `@media only screen and (min-width: ${xLargeBreakpoint}px) and (m
   xxLargeBreakpoint - 1
 }px)`;
 const large = `@media only screen and (min-width: ${largeBreakpoint}px) and (max-width: ${
-    xLargeBreakpoint - 1
-  }px)`;
+  xLargeBreakpoint - 1
+}px)`;
 // const medium = `@media only screen and (min-width: ${mediumBreakpoint}px) and (max-width: ${
 //     largeBreakpoint - 1
 //   }px)`;
 const small = `@media only screen and (max-width: ${mediumBreakpoint - 1}px)`;
-
+const desktop = `@media only screen and (min-width: ${largeBreakpoint}px)`;
 
 const positonRelative = css`
   position: relative;
@@ -82,7 +82,7 @@ export const heroTextWrapper = css`
   width: 60%;
   z-index: 2;
   ${small} {
-      width: 90%;
+    width: 90%;
   }
 `;
 
@@ -94,20 +94,20 @@ export const heroWrapper = cx(
     height: 416px;
     width: 100%;
     ${large} {
-        height: 495px;
+      height: 495px;
     }
     ${xLarge} {
-        height: 625px;
+      height: 625px;
     }
     ${xxLarge} {
-        height: 645px;
+      height: 645px;
     }
   `
 );
 
 export const hpSection = css`
-    padding: 30px 45px;
-    width: 100%;
+  padding: 30px 45px;
+  width: 100%;
 `;
 
 export const navItemsWrapper = cx('nav-items', flexGrow(1));
@@ -122,6 +122,9 @@ export const navList = cx(
       cursor: pointer;
       font-weight: 600;
       margin: 0 24px;
+      &:hover {
+        color: #a3a3a3;
+      }
     }
   `
 );
@@ -133,6 +136,60 @@ export const navWrapper = cx(
     padding: 15px 45px;
   `
 );
+
+export const projectImage = css`
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+  height: 100%;
+  transition: all 0.5s;
+  width: 100%;
+  &:hover {
+    transform: scale(1.2);
+  }
+`;
+
+export const projectImageContainer = css`
+  border-radius: 5px;
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+`;
+
+export const projectImageRow = css`
+  ${desktop} {
+    ${flexRow}
+  }
+`;
+
+export const projectImageWrapper = css`
+  height: 375px;
+  width: 100%;
+  ${large} {
+    ${padding(24, 'right')}
+    height: 200px;
+    width: 33%;
+    &:last-child {
+      ${padding(0, 'right')}
+    }
+  }
+  ${xLarge} {
+    ${padding(24, 'right')}
+    height: 250px;
+    width: 33%;
+    &:last-child {
+      ${padding(0, 'right')}
+    }
+  }
+  ${xxLarge} {
+    ${padding(24, 'right')}
+    height: 275px;
+    width: 33%;
+    &:last-child {
+      ${padding(0, 'right')}
+    }
+  }
+`;
 
 export const siteHeader = css`
   width: 100%;

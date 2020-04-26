@@ -4,12 +4,12 @@ import { css, cx } from 'react-emotion';
 
 import { styles } from '../../constants';
 
-const { heroH1, heroH3, heroP, heroImage, heroOverlay, heroTextWrapper, heroWrapper } = styles;
+const { heroH1, heroH3, heroP, heroOverlay, heroTextWrapper, heroWrapper } = styles;
 
-const HeroImage = ({ alt, header, imgPath, subhead, text }) => {
-    const bgiStyle = css`
-        background-image: url(${imgPath});
-    `;
+const HeroImage = ({ header, imgPath, subhead, text }) => {
+  const bgiStyle = css`
+    background-image: url(${imgPath});
+  `;
 
   return (
     <div className={cx(heroWrapper, bgiStyle)}>
@@ -32,7 +32,6 @@ HeroImage.defaultProps = {
 };
 
 HeroImage.propTypes = {
-  alt: string.isRequired,
   header: string,
   imgPath: string.isRequired,
   subhead: string,

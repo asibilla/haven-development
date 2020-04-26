@@ -13,11 +13,11 @@ export const margin = (num, direction) => {
     return `margin: ${num}px;`;
   }
   return `margin-${direction}: ${num}px;`;
-}
+};
 
 export const padding = (num, direction) => {
   if (!direction) {
     return `padding: ${num}px;`;
   }
   return `padding-${direction}: ${num}px;`;
-}
+};

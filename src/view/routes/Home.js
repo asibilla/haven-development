@@ -1,6 +1,9 @@
 import React from 'react';
 
-import { HeroImage, HPSection } from '../components';
+import { styles } from '../../constants';
+import { HeroImage, HPSection, ProjectImage } from '../components';
+
+const { projectImageRow } = styles;
 
 const Home = () => {
   return (
@@ -16,6 +19,11 @@ const Home = () => {
       </HPSection>
       <HPSection>
         <h2>Our Projects</h2>
+        <div className={projectImageRow}>
+          <ProjectImage imgPath="images/larkey-plan-1.jpg" />
+          <ProjectImage imgPath="images/larkey-plan-2.jpg" />
+          <ProjectImage imgPath="images/larkey-plan-3.jpg" />
+        </div>
       </HPSection>
     </div>
   );
