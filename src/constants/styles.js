@@ -159,7 +159,7 @@ export const projectImage = css`
   &:before {
     content: '';
     background: rgb(2, 0, 36);
-    background: linear-gradient(0deg, rgba(2, 0, 36, 1) 0%, rgba(255, 255, 255, 0) 26%);
+    background: linear-gradient(0deg, rgba(2, 0, 36, 1) 0%, rgba(255, 255, 255, 0) 35%);
     height: 100%;
     left: 0;
     position: absolute;
@@ -172,15 +172,44 @@ export const projectImage = css`
 `;
 
 export const projectImageContainer = css`
+  color: #fff;
   border-radius: 5px;
   height: 100%;
   overflow: hidden;
+  position: relative;
   width: 100%;
 `;
 
 export const projectImageRow = css`
   ${desktop} {
     ${flexRow}
+  }
+`;
+
+export const projectImagePriceContainer = css`
+  background-color: rgba(0, 0, 0, 0.5);
+  font-size: 18px;
+  font-weight: 600;
+  left: 0;
+  padding: 10px 15px;
+  position: absolute;
+  top: 30px;
+`;
+
+export const projectImageTextContainer = css`
+  bottom: 0;
+  left: 0;
+  padding: 12px;
+  position: absolute;
+  p {
+    margin: 0;
+  }
+  .header {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .subhead {
+    color: #a3a3a3;
   }
 `;
 
