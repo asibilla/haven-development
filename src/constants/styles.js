@@ -2,13 +2,21 @@ import { css, cx } from 'react-emotion';
 
 const xxLargeBreakpoint = 1480;
 const xLargeBreakpoint = 1200;
-// const largeBreakpoint = 1024;
-// const mediumBreakpoint = 768;
+const largeBreakpoint = 1024;
+const mediumBreakpoint = 768;
 
 const xxLarge = `@media only screen and (min-width: ${xxLargeBreakpoint}px)`;
 const xLarge = `@media only screen and (min-width: ${xLargeBreakpoint}px) and (max-width: ${
   xxLargeBreakpoint - 1
 }px)`;
+const large = `@media only screen and (min-width: ${largeBreakpoint}px) and (max-width: ${
+    xLargeBreakpoint - 1
+  }px)`;
+const medium = `@media only screen and (min-width: ${mediumBreakpoint}px) and (max-width: ${
+    largeBreakpoint - 1
+  }px)`;
+const small = `@media only screen and (max-width: ${mediumBreakpoint - 1}px)`;
+
 
 const flexGrow = (num) => css`
   flex-grow: ${num};
@@ -77,13 +85,27 @@ export const heroTextWrapper = css`
   position: absolute;
   width: 60%;
   z-index: 2;
+  ${small} {
+      width: 90%;
+  }
 `;
 
 export const heroWrapper = cx(
   positonRelative,
   css`
-    height: 100%;
+    background-position: center;
+    background-size: cover;
+    height: 416px;
     width: 100%;
+    ${large} {
+        height: 495px;
+    }
+    ${xLarge} {
+        height: 625px;
+    }
+    ${xxLarge} {
+        height: 645px;
+    }
   `
 );
 
