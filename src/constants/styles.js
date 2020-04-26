@@ -21,6 +21,7 @@ const large = `@media only screen and (min-width: ${largeBreakpoint}px) and (max
 //   }px)`;
 const small = `@media only screen and (max-width: ${mediumBreakpoint - 1}px)`;
 const desktop = `@media only screen and (min-width: ${largeBreakpoint}px)`;
+const mobile = `@media only screen and (max-width: ${largeBreakpoint - 1}px)`;
 
 const positonRelative = css`
   position: relative;
@@ -105,8 +106,18 @@ export const heroWrapper = cx(
   `
 );
 
+export const hpContent = css`
+  ${desktop} {
+    background-color: #fff;
+    box-shadow: 0px 60px 31px -16px rgba(0, 0, 0, 0.61);
+    margin-bottom: 475px;
+    position: relative;
+    z-index: 10;
+  }
+`;
+
 export const hpSection = css`
-  padding: 30px 45px;
+  padding: 40px 45px;
   width: 100%;
 `;
 
@@ -142,8 +153,19 @@ export const projectImage = css`
   background-size: cover;
   cursor: pointer;
   height: 100%;
+  position: relative;
   transition: all 0.5s;
   width: 100%;
+  &:before {
+    content: '';
+    background: rgb(2, 0, 36);
+    background: linear-gradient(0deg, rgba(2, 0, 36, 1) 0%, rgba(255, 255, 255, 0) 26%);
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
   &:hover {
     transform: scale(1.2);
   }
@@ -183,13 +205,51 @@ export const projectImageWrapper = css`
   }
   ${xxLarge} {
     ${padding(24, 'right')}
-    height: 275px;
+    height: 290px;
+    max-width: 490px;
     width: 33%;
     &:last-child {
       ${padding(0, 'right')}
     }
   }
+  ${desktop} {
+  }
+  ${mobile} {
+    ${padding(12, 'bottom')}
+  }
 `;
+
+export const siteFooter = cx(
+  flexRow,
+  css`
+    background-color: #000;
+    color: #fff;
+    height: 475px;
+    width: 100%;
+    ${desktop} {
+      bottom: 0;
+      left: 0;
+      position: fixed;
+      z-index: 1;
+    }
+  `
+);
+
+export const siteFooterQuickLinks = cx(
+  unstyledList,
+  css`
+    margin: 0;
+    padding: 0;
+    li {
+      cursor: pointer;
+      font-size: 16px;
+      margin-bottom: 4px;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  `
+);
 
 export const siteHeader = css`
   width: 100%;

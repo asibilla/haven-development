@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
-import { SiteHeader, ViewWrapper } from './view/components';
+import { SiteFooter, SiteHeader, ViewWrapper } from './view/components';
 
 const App = () => {
   return (
@@ -9,6 +9,7 @@ const App = () => {
       <BrowserRouter>
         <SiteHeader />
         <ViewWrapper />
+        <SiteFooter />
       </BrowserRouter>
     </div>
   );
