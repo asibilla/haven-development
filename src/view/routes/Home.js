@@ -1,13 +1,17 @@
 import React from 'react';
 
-import { styles } from '../../constants';
-
-const { heroImage } = styles;
+import { HeroImage } from '../components';
 
 const Home = () => {
   return (
     <div data-testid="hp-wrapper">
-      <img className={heroImage} src="images/hp-hero.jpeg" alt="Haven Development HP Hero" />
+      <HeroImage
+        alt="Haven Development HP Hero"
+        header="Haven Development"
+        imgPath="images/hp-hero.jpeg"
+        subhead="Welcome Home"
+        text="We bring together a combined 45 years of development experience within multiple facets of the home building industry in the Northen California market."
+      />
     </div>
   );
 };

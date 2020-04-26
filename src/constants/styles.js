@@ -1,5 +1,37 @@
 import { css, cx } from 'react-emotion';
 
+const xxLargeBreakpoint = 1480;
+const xLargeBreakpoint = 1200;
+// const largeBreakpoint = 1024;
+// const mediumBreakpoint = 768;
+
+const xxLarge = `@media only screen and (min-width: ${xxLargeBreakpoint}px)`;
+const xLarge = `@media only screen and (min-width: ${xLargeBreakpoint}px) and (max-width: ${
+  xxLargeBreakpoint - 1
+}px)`;
+
+const flexGrow = (num) => css`
+  flex-grow: ${num};
+`;
+
+const fontSize = (num) => css`
+  font-size: ${num}px;
+`;
+
+const positonRelative = css`
+  position: relative;
+`;
+
+const scalableImage = css`
+  max-width: 100%;
+  width: 100%;import { styles } from '../../constants';
+
+`;
+
+const unstyledList = css`
+  list-style: none;
+`;
+
 const flexRow = css`
   align-items: center;
   display: flex;
@@ -9,25 +41,51 @@ const flexRow = css`
   width: 100%;
 `;
 
-const flexGrow = (num) => css`
-  flex-grow: ${num};
+export const heroH1 = css`
+  text-transform: uppercase;
 `;
 
-const scalableImage = css`
-  max-width: 100%;
-  width: 100%;
+export const heroH3 = css`
+  margin-bottom: 4px;
+  text-transform: uppercase;
 `;
 
-const unstyledList = css`
-  list-style: none;
-`;
-
-export const globalStyles = css`
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 14px;
+export const heroP = css`
+  font-size: 16px;
+  ${xLarge} {
+    ${fontSize(18)}
+  }
+  ${xxLarge} {
+    ${fontSize(20)}
+  }
 `;
 
 export const heroImage = cx(scalableImage);
+
+export const heroOverlay = css`
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+`;
+
+export const heroTextWrapper = css`
+  bottom: 0px;
+  color: #fff;
+  padding: 45px;
+  position: absolute;
+  width: 60%;
+  z-index: 2;
+`;
+
+export const heroWrapper = cx(
+  positonRelative,
+  css`
+    height: 100%;
+    width: 100%;
+  `
+);
 
 export const navItemsWrapper = cx('nav-items', flexGrow(1));
 
